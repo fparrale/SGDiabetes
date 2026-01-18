@@ -33,7 +33,7 @@ const TutorP = ({ onLogout }) => {
   =============================== */
   const cargarHistorial = async () => {
     try {
-      const res = await fetch("http://localhost:8000/getHistory.php");
+      const res = await fetch("http://franklinparrales.es/SGDiabetesBackend/api/getHistory.php");
       const data = await res.json();
       setHistorial(data);
       setVista("historial");
@@ -48,7 +48,7 @@ const TutorP = ({ onLogout }) => {
 const cargarEstadisticas = async () => {
   setLoadingStats(true);
   try {
-      const res = await fetch("http://localhost:8000/getStatistics.php"); 
+      const res = await fetch("http://franklinparrales.es/SGDiabetesBackend/api/getStatistics.php"); 
       const data = await res.json();
       
       setEstadisticas(data);
@@ -71,7 +71,7 @@ const cargarEstadisticas = async () => {
 
   try {
     const res = await fetch(
-      "http://localhost:8000/getQuestion.php?action=generar&cantidad=20"
+      "http://franklinparrales.es/SGDiabetesBackend/api/getQuestion.php?action=generar&cantidad=20"
     );
     const data = await res.json();
     setPreguntasIA(data);
@@ -93,7 +93,7 @@ const guardarSeleccionadas = async () => {
     return;
   }
 
-  const res = await fetch("http://localhost:8000/uploadQuestions.php", {
+  const res = await fetch("http://franklinparrales.es/SGDiabetesBackend/api/uploadQuestions.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ preguntas: preguntasParaGuardar, origen: "Gemini" }), 
@@ -210,7 +210,7 @@ const guardarSeleccionadas = async () => {
     }
 
     try {
-      const res = await fetch("http://localhost:8000/uploadQuestions.php", {
+      const res = await fetch("http://franklinparrales.es/SGDiabetesBackend/api/uploadQuestions.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ preguntas, origen: "Excel" }),
