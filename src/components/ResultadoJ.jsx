@@ -8,7 +8,7 @@ function ResultadoJ({ score, playerName, onPlayAgain, onExit }) {
     // Obtener Ranking desde backend
     // ============================
     useEffect(() => {
-        fetch("http://localhost:8000/getRanking.php")
+        fetch("http://franklinparrales.es/SGDiabetesBackend/api/getRanking.php")
             .then((res) => res.json())
             .then((data) => {
                 if (Array.isArray(data)) {
