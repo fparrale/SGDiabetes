@@ -45,7 +45,7 @@ function JuegoP({ onGameEnd, playerName }) {
 
             try {
 
-                const url = `http://localhost:8000/Questions.php?player=${encodeURIComponent(playerName)}`;
+                const url = `http://franklinparrales.es/SGDiabetesBackend/api/Questions.php?player=${encodeURIComponent(playerName)}`;
 
                 const response = await fetch(url, {
                     method: 'GET', 
@@ -96,7 +96,7 @@ function JuegoP({ onGameEnd, playerName }) {
         }
 
         try {
-            await fetch('http://localhost:8000/saveProgress.php', {
+            await fetch('http://franklinparrales.es/SGDiabetesBackend/api/saveProgress.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
